@@ -50,6 +50,7 @@ FYI [Robinhood's Terms and Conditions](https://brokerage-static.s3.amazonaws.com
     * [`tag(tag, callback)`](#tagtag-callback)
     * [`popularity(symbol, callback)`](#popularitysymbol-callback)
     * [`options_positions`](#options_positions)
+    * [`options_aggregate_positions`](#options_aggregate_positions)
 * [Contributors](#contributors)
 
 <!-- toc stop -->
@@ -875,6 +876,41 @@ var Robinhood = require('robinhood')(credentials, function() {
 ```
 
 ### `options_positions`
+
+Obtain list of options positions
+
+```typescript
+var credentials = require("../credentials.js")();
+var Robinhood = require('robinhood')(credentials, function() {
+    Robinhood.options_positions((err, response, body) => {
+        if (err) {
+            console.error(err);
+        } else {
+            console.log(body);
+        }
+    });
+});
+
+// account: "https://api.robinhood.com/accounts/XXXXXXXXX/"
+// average_price: "-243.0000"
+// chain_id: "72362eb7-bc7c-4d10-9be4-48a53fffd101"
+// chain_symbol: "IWM"
+// created_at: "2018-10-24T19:43:12.005502Z"
+// id: "64318e4f-a7e9-459a-bfb8-1826cf85e2e0"
+// intraday_average_open_price: "-243.0000"
+// intraday_quantity: "1.0000"
+// option: "https://api.robinhood.com/options/instruments/37e48601-9300-42e6-b4e1-7ba39b86de9d/"
+// pending_buy_quantity: "0.0000"
+// pending_expired_quantity: "0.0000"
+// pending_sell_quantity: "0.0000"
+// quantity: "1.0000"
+// type: "short"
+// updated_at: "2018-10-24T19:43:13.164257Z"
+// url: "https://api.robinhood.com/options/positions/asdfasdf-asdfasdf-asdf-asdf-asdf-/"
+```
+
+
+### `options_aggregate_positions`
 
 Obtain list of options positions
 
