@@ -54,6 +54,7 @@ function RobinhoodWebApi(opts, callback) {
 
         options_positions: "options/positions/",
         options_aggregate_positions: "options/aggregate_positions/",
+        options_instrument: "options/instruments/",
         watchlists: 'watchlists/',
         positions: 'positions/',
         fundamentals: 'fundamentals/',
@@ -359,6 +360,12 @@ function RobinhoodWebApi(opts, callback) {
   api.options_aggregate_positions = function (callback) {
     return _request.get({
       uri: _apiUrl + _endpoints.options_aggregate_positions,
+    }, callback);
+  };
+
+  api.options_instrument = function (instrument, callback) {
+    return _request.get({
+      uri: instrument,
     }, callback);
   };
 
